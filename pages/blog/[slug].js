@@ -75,9 +75,13 @@ export async function getStaticProps({ params }) {
 	};
 }
 
-const BlogPage = ({
-	blogPost: { title, slices, createdAt, cover, short_description },
-}) => {
+const BlogPage = ({ blogPost }) => {
+	if (!blogPost) {
+		return null;
+	}
+
+	const { title, slices, createdAt, cover, short_description } = blogPost;
+
 	return (
 		<>
 			<NextSeo title={getPageTitle(title)} description={short_description} />
