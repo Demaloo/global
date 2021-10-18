@@ -108,7 +108,7 @@ const LatestNews = ({
 				</Text>
 
 				<Text as="span" fontSize="sm">
-					{format(new Date(createdAt), "MMMM dd, yyyy")}
+					{createdAt && format(new Date(createdAt), "MMMM dd, yyyy")}
 				</Text>
 
 				<Wrap mt="4" spacing="4">
