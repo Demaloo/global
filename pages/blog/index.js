@@ -16,7 +16,7 @@ import { queryBlogPosts } from "lib/queries";
 import BlogPost from "~components/blog_post";
 import Header from "~components/header";
 import Footer from "~components/footer";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { NextSeo } from "next-seo";
@@ -108,7 +108,8 @@ const LatestNews = ({
 				</Text>
 
 				<Text as="span" fontSize="sm">
-					{createdAt && format(new Date(createdAt), "MMMM dd, yyyy")}
+					{/* {createdAt && format(new Date(createdAt), "MMMM dd, yyyy")} */}
+					{createdAt}
 				</Text>
 
 				<Wrap mt="4" spacing="4">

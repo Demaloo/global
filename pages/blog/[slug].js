@@ -13,7 +13,7 @@ import Prismic from "@prismicio/client";
 import { Client } from "lib/prismic";
 import { queryBlogPost } from "lib/queries";
 import Header from "~components/header";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { getPlaiceholder } from "plaiceholder";
@@ -114,7 +114,8 @@ const BlogPage = ({ blogPost }) => {
 						</Heading>
 
 						<Text pb="10" color="gray.500" textAlign="center">
-							{format(new Date(createdAt), "MMMM dd, yyyy")}
+							{/* {format(new Date(createdAt), "MMMM dd, yyyy")} */}
+							{createdAt}
 						</Text>
 
 						<AspectRatio

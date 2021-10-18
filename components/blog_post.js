@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 // TODO
 // add changedAt date
@@ -56,7 +56,8 @@ const BlogPost = ({
 			</Text>
 
 			<Text as="span" fontSize="sm">
-				{createdAt && format(new Date(createdAt), "MMMM dd, yyyy")}
+				{/* {createdAt && format(new Date(createdAt), "MMMM dd, yyyy")} */}
+				{createdAt}
 			</Text>
 
 			<Wrap mt="4" spacing="4">
