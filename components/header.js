@@ -1,5 +1,6 @@
 import { Box, Container, Flex, Link } from "@chakra-ui/react";
 import { useViewportScroll } from "framer-motion";
+import { HEADER_HEIGHT } from "lib/constants";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
 
@@ -18,7 +19,7 @@ const Header = () => {
 			top="0"
 			zIndex="1"
 			backgroundColor={y > 0 ? "white" : "transparent"}
-			height="3rem"
+			height={HEADER_HEIGHT}
 			transition="background-color 0.4s"
 		>
 			<Container maxW="container.xl" height="100%">

@@ -11,7 +11,6 @@ import {
 import { useState } from "react";
 import NextImage from "next/image";
 import { useKeenSlider } from "keen-slider/react";
-import "keen-slider/keen-slider.min.css";
 
 const items = [
 	{
@@ -48,12 +47,12 @@ const Carousel = () => {
 
 	return (
 		<Box
+			as="section"
 			ref={sliderRef}
 			width="100%"
 			height="100vh"
 			position="relative"
 			overflow="hidden"
-			marginY="-3rem"
 		>
 			{items.map(({ image }, idx) => (
 				<Box
