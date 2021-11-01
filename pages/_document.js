@@ -10,6 +10,10 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					></link>
 				</Head>
+				{process.env.NODE_ENV === "production" && (
+					<script async src="https://cdn.splitbee.io/sb.js"></script>
+				)}
+
 				<body>
 					<Main />
 					<NextScript />
