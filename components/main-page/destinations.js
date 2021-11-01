@@ -84,7 +84,7 @@ function Destinations() {
 							<AspectRatio
 								key={`${title}`}
 								className="keen-slider__slide"
-								ratio={[1, null, 8 / 5]}
+								ratio={[1, null, 5 / 4]}
 							>
 								<Box
 									bg="gray.200"
