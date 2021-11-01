@@ -136,7 +136,7 @@ const BlogPage = ({ blogPosts }) => {
 				<Container
 					as="section"
 					maxW="container.lg"
-					my={["50px", null, "100px"]}
+					my={["80px", null, "100px"]}
 				>
 					<Grid
 						templateColumns={[
