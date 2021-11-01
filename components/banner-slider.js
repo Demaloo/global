@@ -13,9 +13,24 @@ import NextImage from "next/image";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 
+const items = [
+	{
+		image: "/banners/slider-banner-1.jpeg",
+		category: "Camping",
+	},
+	{
+		image: "/banners/slider-banner-2.jpeg",
+		category: "Trekking",
+	},
+	{
+		image: "/banners/slider-banner-3.jpeg",
+		category: "Horse Riding",
+	},
+];
+
 const Carousel = () => {
 	const [opacities, setOpacities] = useState([]);
-	const [, setCurrIdx] = useState(0);
+	const [currIdx, setCurrIdx] = useState(0);
 	const [sliderRef, slider] = useKeenSlider({
 		slides: 3,
 		loop: true,
@@ -40,11 +55,7 @@ const Carousel = () => {
 			overflow="hidden"
 			marginY="-3rem"
 		>
-			{[
-				"/banners/slider-banner-1.jpeg",
-				"/banners/slider-banner-2.jpeg",
-				"/banners/slider-banner-3.jpeg",
-			].map((img, idx) => (
+			{items.map(({ image }, idx) => (
 				<Box
 					key={idx}
 					boxSize="100%"
@@ -61,7 +72,7 @@ const Carousel = () => {
 					>
 						<Box position="relative" boxSize="100%">
 							<NextImage
-								src={img}
+								src={image}
 								layout="fill"
 								objectFit="cover"
 								quality={50}
@@ -105,12 +116,35 @@ const Carousel = () => {
 								CREATE TRIP
 							</Button>
 						</Flex>
-						<NextSlideButton
-							icon={<ChevronRightIcon />}
-							onClick={() => {
-								slider.next();
-							}}
-						/>
+						<Flex
+							flexDirection="column"
+							height="100%"
+							alignItems="flex-end"
+						>
+							<Flex flex="1" alignItems="center">
+								<NextSlideButton
+									icon={<ChevronRightIcon />}
+									onClick={() => {
+										slider.next();
+									}}
+								/>
+							</Flex>
+							<Box
+								padding="4"
+								px="6"
+								backgroundColor="rgba(0, 0, 0, 0.3)"
+								borderRadius="lg"
+							>
+								<Text
+									as="span"
+									color="white"
+									fontWeight="bold"
+									fontSize="2xl"
+								>
+									{items[currIdx].category}
+								</Text>
+							</Box>
+						</Flex>
 					</Flex>
 				</Container>
 			</Box>
