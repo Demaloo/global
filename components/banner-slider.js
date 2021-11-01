@@ -102,7 +102,12 @@ const Carousel = () => {
 							<Heading size="2xl" mb="6" lineHeight="short">
 								Faboulous Adventures Start with Demtrips
 							</Heading>
-							<Text lineHeight="taller" fontSize="lg" mb="8">
+							<Text
+								lineHeight="taller"
+								fontSize="lg"
+								mb="8"
+								display={["none", null, "block"]}
+							>
 								Kayak (styled as KAYAK) is an American online travel
 								agency and metasearch engine owned and operated by
 								Booking Holdings.
@@ -134,6 +139,7 @@ const Carousel = () => {
 								px="6"
 								backgroundColor="rgba(0, 0, 0, 0.3)"
 								borderRadius="lg"
+								display={["none", null, "block"]}
 							>
 								<Text
 									as="span"
