@@ -70,6 +70,13 @@ const customTheme = extendTheme({
 				},
 			},
 		},
+		Button: {
+			baseStyle: {
+				_focus: {
+					boxShadow: "none",
+				},
+			},
+		},
 	},
 });
 
