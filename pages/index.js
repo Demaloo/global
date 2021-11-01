@@ -7,7 +7,7 @@ import Destinations from "~components/main-page/destinations";
 export default function Home() {
 	return (
 		<>
-			<Header />
+			<Header isTransparent={true} />
 			<Layout>
 				<Carousel />
 				<Destinations />

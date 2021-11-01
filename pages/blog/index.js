@@ -1,6 +1,5 @@
 import {
 	AspectRatio,
-	Box,
 	Container,
 	Flex,
 	Grid,
@@ -21,6 +20,7 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import { NextSeo } from "next-seo";
 import { getPageTitle, pagesConfig } from "../../lib/config";
+import Layout from "~components/layout";
 
 export async function getStaticProps() {
 	let blogPosts = await queryBlogPosts({
@@ -132,7 +132,7 @@ const BlogPage = ({ blogPosts }) => {
 				description={pagesConfig.blog.description}
 			/>
 			<Header />
-			<Box as="main">
+			<Layout>
 				<Container
 					as="section"
 					maxW="container.lg"
@@ -156,7 +156,8 @@ const BlogPage = ({ blogPosts }) => {
 						))}
 					</Grid>
 				</Container>
-			</Box>
+			</Layout>
+
 			<Footer />
 		</>
 	);
