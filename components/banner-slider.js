@@ -71,12 +71,7 @@ const Carousel = () => {
 						left="50%"
 					>
 						<Box position="relative" boxSize="100%">
-							<NextImage
-								src={image}
-								layout="fill"
-								objectFit="cover"
-								quality={50}
-							/>
+							<NextImage src={image} layout="fill" objectFit="cover" />
 						</Box>
 					</Box>
 				</Box>
@@ -91,7 +86,7 @@ const Carousel = () => {
 				bg="rgba(0, 0, 0, 0.5)"
 				width="100%"
 			>
-				<Container height="100%" maxW="container.lg">
+				<Container height="100%" maxW="container.xl">
 					<Flex
 						justifyContent="space-between"
 						alignItems="center"
@@ -128,7 +123,7 @@ const Carousel = () => {
 						>
 							<Flex flex="1" alignItems="center">
 								<NextSlideButton
-									icon={<ChevronRightIcon />}
+									icon={<ChevronRightIcon borderRadius="full" />}
 									onClick={() => {
 										slider.next();
 									}}
@@ -137,6 +132,7 @@ const Carousel = () => {
 							<Box
 								padding="4"
 								px="6"
+								mb="4"
 								backgroundColor="rgba(0, 0, 0, 0.3)"
 								borderRadius="lg"
 								display={["none", null, "block"]}
@@ -170,10 +166,11 @@ const NextSlideButton = ({ icon, onClick }) => {
 			_active={{
 				transform: "scale(1.1)",
 			}}
-			borderColor="saryy"
+			borderColor="white"
+			borderRadius="full"
+			color="white"
 			icon={icon}
 			onClick={onClick}
-			borderRadius="full"
 		/>
 	);
 };

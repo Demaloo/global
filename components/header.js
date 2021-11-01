@@ -11,7 +11,7 @@ const Header = () => {
 			backgroundColor="transparent"
 			height="3rem"
 		>
-			<Container maxW="container.lg" height="100%">
+			<Container maxW="container.xl" height="100%">
 				<Flex height="100%" alignItems="center">
 					<NextLink href="/" passHref>
 						<Link
