@@ -8,6 +8,7 @@ import Script from "next/script";
 import { NextSeo } from "next-seo";
 import { getPageTitle, pagesConfig } from "lib/config";
 import WhyUs from "~components/main-page/why-us";
+import Trending from "~components/main-page/trending";
 
 export default function Home() {
 	return (
@@ -44,6 +45,7 @@ export default function Home() {
 				<WhyUs />
 				<Destinations />
 				<Experiences />
+				<Trending />
 				{/* <Box height="400px"></Box> */}
 				<Footer />
 			</Layout>

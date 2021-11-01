@@ -56,7 +56,7 @@ function Destinations() {
 
 	const spacing = useBreakpointValue({
 		base: 0,
-		md: 20,
+		md: 10,
 	});
 
 	const [sliderRef, slider] = useKeenSlider({
@@ -72,7 +72,7 @@ function Destinations() {
 
 	return (
 		<>
-			<Box as="section" my="100px">
+			<Box as="section" my={["100px", null, "150px"]}>
 				<Container maxW="container.xl">
 					<Box>
 						<Heading
@@ -119,7 +119,7 @@ function Destinations() {
 											position="absolute"
 											top="0"
 											left="0"
-											background="linear-gradient(to top, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.1) 80%)"
+											background="linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0.1) 50%)"
 											color="white"
 											padding="4"
 											justifyContent="flex-end"

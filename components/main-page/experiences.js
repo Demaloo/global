@@ -44,7 +44,7 @@ const experiences = [
 const Experiences = () => {
 	return (
 		<>
-			<Box as="section" my="100px">
+			<Box as="section" my={("100px", null, "150px")}>
 				<Container maxW="container.xl">
 					<Box>
 						<Heading
@@ -65,12 +65,15 @@ const Experiences = () => {
 						{experiences.map(({ image, title, location }, idx) => (
 							<Box key={idx}>
 								<ExperienceImage image={image} title={title} />
-								<Heading size="sm" mb="3">
-									{title}
-								</Heading>
-								<Text fontSize="sm" color="gray.500">
+								<Text fontSize="sm" color="gray.500" mb="2">
 									{location}
 								</Text>
+								<Heading
+									fontSize={["xl", null, "2xl"]}
+									fontWeight="semibold"
+								>
+									{title}
+								</Heading>
 							</Box>
 						))}
 					</Grid>

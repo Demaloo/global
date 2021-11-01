@@ -37,7 +37,13 @@ const Feature = ({ title, description }) => (
 
 const WhyUs = () => {
 	return (
-		<Box as="section" my="100px" bg="brand" py="80px" color="white">
+		<Box
+			as="section"
+			my={("100px", null, "150px")}
+			bg="brand"
+			py="80px"
+			color="white"
+		>
 			<Container maxW="container.xl">
 				<Box>
 					<Heading mb="50px" size="lg" fontWeight="semibold">
