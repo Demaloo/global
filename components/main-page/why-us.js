@@ -40,7 +40,7 @@ const WhyUs = () => {
 		<Box as="section" my="100px" bg="brand" py="80px" color="white">
 			<Container maxW="container.xl">
 				<Box>
-					<Heading mb="50px" size="lg">
+					<Heading mb="50px" size="lg" fontWeight="semibold">
 						Why Choose Us
 					</Heading>
 				</Box>

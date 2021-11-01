@@ -78,6 +78,7 @@ function Destinations() {
 						<Heading
 							textAlign={["start", null, "center"]}
 							mb="50px"
+							fontWeight="semibold"
 							size="lg"
 						>
 							Destinations
@@ -118,15 +119,15 @@ function Destinations() {
 											position="absolute"
 											top="0"
 											left="0"
-											background="linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%)"
+											background="linear-gradient(to top, rgba(0, 0, 0, 0.7) 0, rgba(0, 0, 0, 0.1) 80%)"
 											color="white"
 											padding="4"
 											justifyContent="flex-end"
 										>
-											<Heading size="lg" mb="3">
+											<Heading size="lg" mb="2">
 												{title}
 											</Heading>
-											<Text>{description}</Text>
+											<Text fontSize="sm">{description}</Text>
 										</Flex>
 									</Box>
 								</AspectRatio>

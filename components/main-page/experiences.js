@@ -51,6 +51,7 @@ const Experiences = () => {
 							textAlign={["start", null, "center"]}
 							mb="50px"
 							size="lg"
+							fontWeight="semibold"
 						>
 							Best Experiences
 						</Heading>
@@ -58,8 +59,8 @@ const Experiences = () => {
 
 					<Grid
 						templateColumns={["repeat(2, 1fr)", null, "repeat(3, 1fr)"]}
-						rowGap="10"
-						columnGap="4"
+						rowGap={[10, null, 14]}
+						columnGap={[4, null, 6]}
 					>
 						{experiences.map(({ image, title, location }, idx) => (
 							<Box key={idx}>
