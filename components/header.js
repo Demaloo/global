@@ -1,5 +1,6 @@
 import { Box, Container, Flex, Link } from "@chakra-ui/react";
 import { useViewportScroll } from "framer-motion";
+import { sitemap } from "lib/config";
 import { HEADER_HEIGHT } from "lib/constants";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
@@ -47,9 +48,13 @@ const Header = ({ isTransparent = false }) => {
 							Demtrips.
 						</Link>
 					</NextLink>
-					<HeaderLink href="/blog" isTrans={isTrans}>
-						Blog
-					</HeaderLink>
+					{sitemap
+						.filter((el) => el.href !== "/")
+						.map(({ title, href }, idx) => (
+							<HeaderLink key={idx} href={href} isTrans={isTrans}>
+								{title}
+							</HeaderLink>
+						))}
 				</Flex>
 			</Container>
 		</Box>

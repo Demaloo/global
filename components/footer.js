@@ -13,20 +13,19 @@ import Logo from "./logo";
 
 const Footer = () => {
 	return (
-		<Box as="footer">
+		<Box
+			as="footer"
+			py={["50px", "100px"]}
+			border="1px solid"
+			borderColor="gray.300"
+		>
 			<Container maxW="container.lg">
-				<Flex
-					py={["50px", "100px"]}
-					justifyContent={["flex-start", "center"]}
-				>
-					<Stack spacing="6" maxW="300px">
+				<Flex justifyContent="space-between" mb="10">
+					<Stack spacing="6">
 						<Logo />
-						<Text fontSize="sm">
+						<Text fontSize="sm" maxW="300px">
 							Weve counted billions of page views for thousands of
 							customers, all without ever compromising anyone’s privacy.
-						</Text>
-						<Text as="span" color="gray.500">
-							© Demaloo 2021
 						</Text>
 					</Stack>
 
@@ -37,7 +36,7 @@ const Footer = () => {
 						ml="50px"
 					>
 						<Heading as="h4" size="xs" mb="2">
-							Company
+							Legal
 						</Heading>
 						{sitemap.map(({ title, href }) => {
 							return (
@@ -47,6 +46,47 @@ const Footer = () => {
 							);
 						})}
 					</Stack>
+
+					<Stack
+						spacing="2"
+						textAlign={["start"]}
+						display={["none", "flex"]}
+						ml="50px"
+					>
+						<Heading as="h4" size="xs" mb="2">
+							Resources
+						</Heading>
+						{sitemap.map(({ title, href }) => {
+							return (
+								<NextLink key={href + title} href={href} passHref>
+									<Link fontSize="sm">{title}</Link>
+								</NextLink>
+							);
+						})}
+					</Stack>
+
+					<Stack
+						spacing="2"
+						textAlign={["start"]}
+						display={["none", "flex"]}
+						ml="50px"
+					>
+						<Heading as="h4" size="xs" mb="2">
+							Sitemap
+						</Heading>
+						{sitemap.map(({ title, href }) => {
+							return (
+								<NextLink key={href + title} href={href} passHref>
+									<Link fontSize="sm">{title}</Link>
+								</NextLink>
+							);
+						})}
+					</Stack>
+				</Flex>
+				<Flex width="100%">
+					<Text as="span" color="gray.500">
+						© Demtrips 2021
+					</Text>
 				</Flex>
 			</Container>
 		</Box>

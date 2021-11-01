@@ -59,14 +59,7 @@ const Experiences = () => {
 					>
 						{experiences.map(({ image, title, location }, idx) => (
 							<Box key={idx}>
-								<AspectRatio position="relative" ratio={3 / 2} mb="3">
-									<NextImage
-										src={image}
-										alt={title}
-										layout="fill"
-										objectFit="cover"
-									/>
-								</AspectRatio>
+								<ExperienceImage image={image} title={title} />
 								<Heading size="sm" mb="3">
 									{title}
 								</Heading>
@@ -77,6 +70,14 @@ const Experiences = () => {
 				</Container>
 			</Box>
 		</>
+	);
+};
+
+const ExperienceImage = ({ image, title }) => {
+	return (
+		<AspectRatio position="relative" ratio={3 / 2} mb="3" bg="gray.100">
+			<NextImage src={image} alt={title} layout="fill" objectFit="cover" />
+		</AspectRatio>
 	);
 };
 

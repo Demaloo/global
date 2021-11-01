@@ -1,5 +1,5 @@
-import { Box } from "@chakra-ui/react";
 import Carousel from "~components/banner-slider";
+import Footer from "~components/footer";
 import Header from "~components/header";
 import Layout from "~components/layout";
 import Destinations from "~components/main-page/destinations";
@@ -13,7 +13,8 @@ export default function Home() {
 				<Carousel />
 				<Destinations />
 				<Experiences />
-				<Box height="400px"></Box>
+				{/* <Box height="400px"></Box> */}
+				<Footer />
 			</Layout>
 		</>
 	);
