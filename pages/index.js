@@ -5,10 +5,18 @@ import Layout from "~components/layout";
 import Destinations from "~components/main-page/destinations";
 import Experiences from "~components/main-page/experiences";
 import Script from "next/script";
+import { NextSeo } from "next-seo";
+import { getPageTitle, pagesConfig } from "lib/config";
+import WhyUs from "~components/main-page/why-us";
 
 export default function Home() {
 	return (
 		<>
+			<NextSeo
+				title={getPageTitle(pagesConfig.home.title)}
+				description={pagesConfig.home.description}
+			/>
+
 			{
 				// eslint-disable-next-line no-undef
 				process.env.NODE_ENV === "production" && (
@@ -33,6 +41,7 @@ export default function Home() {
 			<Header isTransparent={true} />
 			<Layout>
 				<Carousel />
+				<WhyUs />
 				<Destinations />
 				<Experiences />
 				{/* <Box height="400px"></Box> */}

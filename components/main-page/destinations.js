@@ -75,7 +75,11 @@ function Destinations() {
 			<Box as="section" my="100px">
 				<Container maxW="container.xl">
 					<Box>
-						<Heading textAlign="center" mb="50px" size="lg">
+						<Heading
+							textAlign={["start", null, "center"]}
+							mb="50px"
+							size="lg"
+						>
 							Destinations
 						</Heading>
 					</Box>

@@ -47,7 +47,11 @@ const Experiences = () => {
 			<Box as="section" my="100px">
 				<Container maxW="container.xl">
 					<Box>
-						<Heading textAlign="center" mb="50px" size="lg">
+						<Heading
+							textAlign={["start", null, "center"]}
+							mb="50px"
+							size="lg"
+						>
 							Best Experiences
 						</Heading>
 					</Box>
@@ -63,7 +67,9 @@ const Experiences = () => {
 								<Heading size="sm" mb="3">
 									{title}
 								</Heading>
-								<Text fontSize="sm">{location}</Text>
+								<Text fontSize="sm" color="gray.500">
+									{location}
+								</Text>
 							</Box>
 						))}
 					</Grid>

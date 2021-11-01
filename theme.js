@@ -61,7 +61,9 @@ const customTheme = extendTheme({
 		body: "Poppins, sans-serif",
 		heading: "Poppins, sans-serif",
 	},
-	colors: {},
+	colors: {
+		brand: "#F06666",
+	},
 	components: {
 		Link: {
 			baseStyle: {

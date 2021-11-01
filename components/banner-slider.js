@@ -108,11 +108,12 @@ const Carousel = () => {
 							</Text>
 							<Button
 								colorScheme="red"
+								bg="brand"
 								borderRadius="lg"
 								fontSize="md"
 								size="lg"
 							>
-								CREATE TRIP
+								Create Trip
 							</Button>
 						</Flex>
 						<Flex
