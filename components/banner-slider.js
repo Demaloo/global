@@ -87,10 +87,12 @@ const Carousel = () => {
 			>
 				<Container height="100%" maxW="container.xl">
 					<Flex
+						height="100%"
 						justifyContent="space-between"
 						alignItems="center"
-						height="100%"
 						color="white"
+						flex="1"
+						position="relative"
 					>
 						<Flex flexDirection="column" maxW="700px" alignItems="start">
 							<Heading size="2xl" mb="6" lineHeight="short">
@@ -112,40 +114,45 @@ const Carousel = () => {
 								borderRadius="lg"
 								fontSize="md"
 								size="lg"
+								mb="10"
 							>
 								Create Trip
 							</Button>
 						</Flex>
+						<NextSlideButton
+							icon={<ChevronRightIcon borderRadius="full" />}
+							onClick={() => {
+								slider.next();
+							}}
+						/>
 						<Flex
-							flexDirection="column"
-							height="100%"
-							alignItems="flex-end"
+							position="absolute"
+							left="0"
+							right="0"
+							width="100%"
+							bottom={[10, null, 24]}
 						>
-							<Flex flex="1" alignItems="center">
-								<NextSlideButton
-									icon={<ChevronRightIcon borderRadius="full" />}
+							{items.map(({ category }, idx) => (
+								<Button
+									display={[
+										currIdx === idx ? "inline" : "none",
+										null,
+										"inline",
+									]}
+									mr="10"
+									key={category}
+									fontWeight="semibold"
+									fontSize={["lg", null, "xl"]}
+									color={currIdx === idx ? "white" : "gray.400"}
+									transition="all 0.3s"
+									variant="unstyled"
 									onClick={() => {
-										slider.next();
+										slider.moveToSlideRelative(idx);
 									}}
-								/>
-							</Flex>
-							<Box
-								padding="4"
-								px="6"
-								mb="4"
-								backgroundColor="rgba(0, 0, 0, 0.3)"
-								borderRadius="lg"
-								display={["none", null, "block"]}
-							>
-								<Text
-									as="span"
-									color="white"
-									fontWeight="bold"
-									fontSize="2xl"
 								>
-									{items[currIdx].category}
-								</Text>
-							</Box>
+									{category}
+								</Button>
+							))}
 						</Flex>
 					</Flex>
 				</Container>
@@ -153,6 +160,8 @@ const Carousel = () => {
 		</Box>
 	);
 };
+
+// {items[currIdx].category}
 
 const NextSlideButton = ({ icon, onClick }) => {
 	return (
