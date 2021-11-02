@@ -18,14 +18,14 @@ const About = () => {
 					<Grid
 						templateColumns={["1fr", null, "1fr 1fr"]}
 						rowGap="20"
-						columnGap="10"
+						columnGap="20"
 					>
 						<Flex alignItems="center">
 							<Flex
 								flexDirection="column"
 								alignItems="start"
 								justifyContent={["flex-start", null, "flex-end"]}
-								maxW="500px"
+								maxW={["none", null, "500px"]}
 							>
 								<Heading
 									mb={[8, null, 10]}
