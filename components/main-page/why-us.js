@@ -39,7 +39,7 @@ const WhyUs = () => {
 	return (
 		<Box
 			as="section"
-			my={("100px", null, "150px")}
+			my={["100px", null, "150px"]}
 			bg="brand"
 			py="80px"
 			color="white"

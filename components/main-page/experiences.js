@@ -44,7 +44,7 @@ const experiences = [
 const Experiences = () => {
 	return (
 		<>
-			<Box as="section" my={("100px", null, "150px")}>
+			<Box as="section" my={["100px", null, "150px"]}>
 				<Container maxW="container.xl">
 					<Box>
 						<Heading
@@ -60,7 +60,7 @@ const Experiences = () => {
 					<Grid
 						templateColumns={["repeat(2, 1fr)", null, "repeat(3, 1fr)"]}
 						rowGap={[10, null, 14]}
-						columnGap={[4, null, 6]}
+						columnGap={[4, null, 4]}
 					>
 						{experiences.map(({ image, title, location }, idx) => (
 							<Box key={idx}>
@@ -69,7 +69,7 @@ const Experiences = () => {
 									{location}
 								</Text>
 								<Heading
-									fontSize={["xl", null, "2xl"]}
+									fontSize={["lg", null, "2xl"]}
 									fontWeight="semibold"
 								>
 									{title}
@@ -85,7 +85,14 @@ const Experiences = () => {
 
 const ExperienceImage = ({ image, title }) => {
 	return (
-		<AspectRatio position="relative" ratio={3 / 2} mb="3" bg="gray.100">
+		<AspectRatio
+			position="relative"
+			ratio={3 / 2}
+			mb="3"
+			bg="gray.100"
+			borderRadius={[0, null, "md"]}
+			overflow="hidden"
+		>
 			<NextImage src={image} alt={title} layout="fill" objectFit="cover" />
 		</AspectRatio>
 	);

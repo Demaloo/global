@@ -56,7 +56,7 @@ function Destinations() {
 
 	const spacing = useBreakpointValue({
 		base: 0,
-		md: 10,
+		md: 16,
 	});
 
 	const [sliderRef, slider] = useKeenSlider({
@@ -137,7 +137,7 @@ function Destinations() {
 						{slideIndex === 0 ? null : (
 							<SliderButton
 								position="absolute"
-								left="2rem"
+								left={[4, null, 8]}
 								top="50%"
 								transform="translateY(-50%)"
 								icon={<ChevronLeftIcon boxSize={8} />}
@@ -151,7 +151,7 @@ function Destinations() {
 							(slidesPerView === 1 && slideIndex === 4 ? null : (
 								<SliderButton
 									position="absolute"
-									right="2rem"
+									right={[4, null, 8]}
 									top="50%"
 									transform="translateY(-50%)"
 									icon={<ChevronRightIcon boxSize={8} />}

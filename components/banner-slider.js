@@ -120,7 +120,7 @@ const Carousel = () => {
 							</Button>
 						</Flex>
 						<NextSlideButton
-							icon={<ChevronRightIcon borderRadius="full" />}
+							icon={<ChevronRightIcon borderRadius="full" boxSize="6" />}
 							onClick={() => {
 								slider.next();
 							}}
