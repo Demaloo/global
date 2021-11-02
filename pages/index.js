@@ -10,6 +10,7 @@ import { getPageTitle, pagesConfig } from "lib/config";
 import WhyUs from "~components/main-page/why-us";
 import Trending from "~components/main-page/trending";
 import Testimonials from "~components/main-page/testimonials";
+import About from "~components/main-page/about";
 
 export default function Home() {
 	return (
@@ -43,6 +44,7 @@ export default function Home() {
 			<Header isTransparent={true} />
 			<Layout>
 				<Carousel />
+				<About />
 				<WhyUs />
 				<Destinations />
 				<Experiences />
