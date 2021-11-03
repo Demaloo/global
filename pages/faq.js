@@ -50,7 +50,7 @@ const FaqsPage = () => {
 
 			<Header />
 			<Layout>
-				<Container maxW="container.xl" my="50px">
+				<Container maxW="container.xl" mt="100px">
 					<Box>
 						<Faqs faqs={faqs} />
 					</Box>
