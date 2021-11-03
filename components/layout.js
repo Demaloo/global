@@ -3,7 +3,7 @@ import { HEADER_HEIGHT } from "lib/constants";
 
 function Layout({ children }) {
 	return (
-		<Box as="main" marginT={`-${HEADER_HEIGHT}`}>
+		<Box as="main" mt={`-${HEADER_HEIGHT}`}>
 			{children}
 		</Box>
 	);
