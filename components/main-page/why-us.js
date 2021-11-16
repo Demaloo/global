@@ -28,7 +28,7 @@ const features = [
 const Feature = ({ title, description }) => (
 	<Box>
 		<NextImage src="/feature-icon-example.png" width="60px" height="60px" />
-		<Heading my="3" fontSize={["md", null, "2xl"]}>
+		<Heading my="3" size="md">
 			{title}
 		</Heading>
 		<Text fontSize="sm">{description}</Text>

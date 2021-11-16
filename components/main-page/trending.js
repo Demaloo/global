@@ -9,7 +9,6 @@ const Trending = () => {
 					<Heading
 						textAlign={["start", null, "center"]}
 						mb="50px"
-						fontWeight="semibold"
 						size="lg"
 					>
 						Trending Now

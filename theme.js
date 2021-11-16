@@ -63,10 +63,29 @@ const customTheme = extendTheme({
 	},
 	colors: {
 		brand: "#F06666",
+		kyzyl: {
+			100: "#f0bbbb",
+			200: "#f0bbbb",
+			300: "#f0bbbb",
+			400: "#F06666",
+			500: "#F06666",
+			600: "#ab4141",
+			700: "#ab4141",
+		},
+		jashyl: {
+			100: "#b5f7eb",
+			200: "#b5f7eb",
+			300: "#b5f7eb",
+			400: "#00D0AA",
+			500: "#00D0AA",
+			600: "#3ca391",
+			700: "#3ca391",
+		},
 	},
 	components: {
 		Link: {
 			baseStyle: {
+				borderRadius: "lg",
 				_focus: {
 					boxShadow: "none",
 				},
@@ -78,6 +97,83 @@ const customTheme = extendTheme({
 					boxShadow: "none",
 				},
 			},
+			sizes: {
+				lg: {
+					fontSize: "md",
+				},
+			},
+			defaultProps: {
+				colorScheme: "kyzyl",
+			},
+		},
+		Heading: {
+			baseStyle: {
+				fontWeight: "semibold",
+			},
+			sizes: {
+				md: {
+					fontSize: ["xl", null, "2xl"],
+				},
+				lg: {
+					fontSize: ["2xl", null, "3xl"],
+				},
+				xl: {
+					fontSize: ["3xl", null, "4xl"],
+				},
+				"2xl": {
+					fontSize: ["4xl", null, "5xl"],
+				},
+				"3xl": {
+					fontSize: ["5xl", null, "6xl"],
+				},
+				"4xl": {
+					fontSize: ["6xl", null, "7xl"],
+				},
+			},
+		},
+		Input: {
+			variants: {
+				outline: {
+					field: {
+						_focus: {
+							borderColor: "gray.500",
+							boxShadow: "none",
+						},
+						_invalid: {
+							borderColor: "red.300",
+							boxShadow: "none",
+						},
+					},
+				},
+			},
+			sizes: {
+				lg: {
+					field: {
+						// h: 16,
+						fontSize: "md",
+					},
+				},
+			},
+		},
+		Textarea: {
+			variants: {
+				outline: {
+					_focus: {
+						borderColor: "gray.500",
+						boxShadow: "none",
+					},
+				},
+			},
+		},
+	},
+	textStyles: {
+		caption: {
+			fontSize: "sm",
+			color: "gray.500",
+		},
+		title: {
+			fontWeight: "semibold",
+			fontSize: ["sm"],
 		},
 	},
 });

@@ -51,7 +51,6 @@ const Experiences = () => {
 							textAlign={["start", null, "center"]}
 							mb="50px"
 							size="lg"
-							fontWeight="semibold"
 						>
 							Best Experiences
 						</Heading>
@@ -65,11 +64,12 @@ const Experiences = () => {
 						{experiences.map(({ image, title, location }, idx) => (
 							<Box key={idx}>
 								<ExperienceImage image={image} title={title} />
-								<Text fontSize="sm" color="gray.500" mb="2">
+								<Text textStyle="caption" mb="2">
 									{location}
 								</Text>
 								<Heading
-									fontSize={["lg", null, "2xl"]}
+									// fontSize={["lg", null, "2xl"]}
+									size="md"
 									fontWeight="semibold"
 								>
 									{title}

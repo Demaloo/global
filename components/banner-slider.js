@@ -11,6 +11,8 @@ import {
 import { useState } from "react";
 import NextImage from "next/image";
 import { useKeenSlider } from "keen-slider/react";
+import { useAtom } from "jotai";
+import { requestAtom } from "state";
 
 const items = [
 	{
@@ -44,6 +46,8 @@ const Carousel = () => {
 			setOpacities(new_opacities);
 		},
 	});
+
+	const [, setRequestModalOpen] = useAtom(requestAtom);
 
 	return (
 		<Box
@@ -109,12 +113,11 @@ const Carousel = () => {
 								Booking Holdings.
 							</Text>
 							<Button
-								colorScheme="red"
-								bg="brand"
-								borderRadius="lg"
-								fontSize="md"
 								size="lg"
 								mb="10"
+								onClick={() => {
+									setRequestModalOpen(true);
+								}}
 							>
 								Create Trip
 							</Button>

@@ -29,7 +29,8 @@ const About = () => {
 							>
 								<Heading
 									mb={[8, null, 10]}
-									fontSize={["xl", null, "4xl"]}
+									// fontSize={["xl", null, "4xl"]}
+									size="xl"
 								>
 									Explore all corners of the world with us
 								</Heading>
@@ -39,15 +40,7 @@ const About = () => {
 									available in your zone. We have more than 1000 of
 									menus online. Its quick, easy and totally secure
 								</Text>
-								<Button
-									colorScheme="red"
-									bg="brand"
-									borderRadius="lg"
-									fontSize="md"
-									size="lg"
-								>
-									Create Trip
-								</Button>
+								<Button size="lg">Create Trip</Button>
 							</Flex>
 						</Flex>
 						<Flex

@@ -20,7 +20,6 @@ import NextImage from "next/image";
 import NextLink from "next/link";
 import { NextSeo } from "next-seo";
 import { getPageTitle, pagesConfig } from "../../lib/config";
-import Layout from "~components/layout";
 
 export async function getStaticProps() {
 	let blogPosts = await queryBlogPosts({
@@ -132,32 +131,29 @@ const BlogPage = ({ blogPosts }) => {
 				description={pagesConfig.blog.description}
 			/>
 			<Header />
-			<Layout>
-				<Container
-					as="section"
-					maxW="container.lg"
-					my={["80px", null, "100px"]}
+			<Container
+				as="section"
+				maxW="container.lg"
+				// my={["80px", null, "100px"]}
+			>
+				<Grid
+					templateColumns={[
+						"repeat(1, 1fr)",
+						null,
+						null,
+						"repeat(2, 1fr)",
+					]}
+					columnGap={[0, null, 10]}
+					rowGap="20"
 				>
-					<Grid
-						templateColumns={[
-							"repeat(1, 1fr)",
-							null,
-							null,
-							"repeat(2, 1fr)",
-						]}
-						columnGap={[0, null, 10]}
-						rowGap="20"
-					>
-						<Flex gridArea="1 / 1 / 2 / 3">
-							<LatestNews {...blogPosts[0]} />
-						</Flex>
-						{blogPosts.slice(1).map(({ id, ...rest }) => (
-							<BlogPost key={id} {...rest} />
-						))}
-					</Grid>
-				</Container>
-			</Layout>
-
+					<Flex gridArea="1 / 1 / 2 / 3">
+						<LatestNews {...blogPosts[0]} />
+					</Flex>
+					{blogPosts.slice(1).map(({ id, ...rest }) => (
+						<BlogPost key={id} {...rest} />
+					))}
+				</Grid>
+			</Container>
 			<Footer />
 		</>
 	);

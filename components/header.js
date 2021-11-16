@@ -1,13 +1,18 @@
-import { Box, Container, Flex, Link } from "@chakra-ui/react";
+import { Box, Container, Flex, Link, Button } from "@chakra-ui/react";
 import { useViewportScroll } from "framer-motion";
+import { useAtom } from "jotai";
 import { sitemap } from "lib/config";
 import { HEADER_HEIGHT } from "lib/constants";
 import NextLink from "next/link";
 import { useEffect, useState } from "react";
+import { requestAtom } from "state";
+import Request from "./request";
 
 const Header = ({ isTransparent = false }) => {
 	const [y, setY] = useState(0);
 	const { scrollY } = useViewportScroll();
+
+	const [isRequestModalOpen, setRequestModalOpen] = useAtom(requestAtom);
 
 	useEffect(() => {
 		return scrollY.onChange(() => setY(scrollY.get()));
@@ -18,9 +23,10 @@ const Header = ({ isTransparent = false }) => {
 	return (
 		<Box
 			as="header"
-			position="sticky"
+			position={[isTrans ? "absolute" : "fixed"]}
 			top="0"
 			zIndex="1"
+			width="100%"
 			backgroundColor={isTrans ? "transparent" : "white"}
 			height={HEADER_HEIGHT}
 			transition="background-color 0.4s"
@@ -48,6 +54,18 @@ const Header = ({ isTransparent = false }) => {
 							Demtrips.
 						</Link>
 					</NextLink>
+
+					<Button
+						display={isTrans ? "none" : "inline"}
+						size="sm"
+						// variant="outline"
+						onClick={() => {
+							setRequestModalOpen(true);
+						}}
+					>
+						Create Trip
+					</Button>
+
 					{sitemap
 						.filter((el) => el.href !== "/")
 						.map(({ title, href }, idx) => (
@@ -55,6 +73,13 @@ const Header = ({ isTransparent = false }) => {
 								{title}
 							</HeaderLink>
 						))}
+
+					<Request
+						isOpen={isRequestModalOpen}
+						onClose={() => {
+							setRequestModalOpen(false);
+						}}
+					/>
 				</Flex>
 			</Container>
 		</Box>

@@ -1,7 +1,6 @@
 import Carousel from "~components/banner-slider";
 import Footer from "~components/footer";
 import Header from "~components/header";
-import Layout from "~components/layout";
 import Destinations from "~components/main-page/destinations";
 import Experiences from "~components/main-page/experiences";
 import Script from "next/script";
@@ -11,6 +10,7 @@ import WhyUs from "~components/main-page/why-us";
 import Trending from "~components/main-page/trending";
 import Testimonials from "~components/main-page/testimonials";
 import About from "~components/main-page/about";
+import { Box } from "@chakra-ui/react";
 
 export default function Home() {
 	return (
@@ -42,7 +42,7 @@ export default function Home() {
 			}
 
 			<Header isTransparent={true} />
-			<Layout>
+			<Box as="main">
 				<Carousel />
 				<About />
 				<WhyUs />
@@ -51,7 +51,7 @@ export default function Home() {
 				<Trending />
 				<Testimonials />
 				<Footer />
-			</Layout>
+			</Box>
 		</>
 	);
 }
