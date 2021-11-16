@@ -10,7 +10,6 @@ import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { NextSeo } from "next-seo";
 import { getPageTitle } from "lib/config";
 import Header from "~components/header";
-import Layout from "~components/layout";
 import Footer from "~components/footer";
 
 const faqs = [
@@ -49,14 +48,14 @@ const FaqsPage = () => {
 			/>
 
 			<Header />
-			<Layout>
+			<Box>
 				<Container maxW="container.xl" mt="100px">
 					<Box>
 						<Faqs faqs={faqs} />
 					</Box>
 				</Container>
 				<Footer />
-			</Layout>
+			</Box>
 		</>
 	);
 };
