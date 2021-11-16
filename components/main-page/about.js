@@ -27,11 +27,7 @@ const About = () => {
 								justifyContent={["flex-start", null, "flex-end"]}
 								maxW={["none", null, "500px"]}
 							>
-								<Heading
-									mb={[8, null, 10]}
-									// fontSize={["xl", null, "4xl"]}
-									size="xl"
-								>
+								<Heading mb={[8, null, 10]} size="xl">
 									Explore all corners of the world with us
 								</Heading>
 								<Text mb={[8, null, 10]}>
@@ -86,10 +82,7 @@ const About = () => {
 								justifyContent="center"
 								maxW="500px"
 							>
-								<Heading
-									mb={[8, null, 10]}
-									fontSize={["xl", null, "4xl"]}
-								>
+								<Heading mb={[8, null, 10]} size="xl">
 									Explore all corners of the world with us
 								</Heading>
 								<Text mb={[8, null, 10]}>

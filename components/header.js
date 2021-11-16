@@ -55,16 +55,17 @@ const Header = ({ isTransparent = false }) => {
 						</Link>
 					</NextLink>
 
-					<Button
-						display={isTrans ? "none" : "inline"}
-						size="sm"
-						// variant="outline"
-						onClick={() => {
-							setRequestModalOpen(true);
-						}}
-					>
-						Create Trip
-					</Button>
+					{y > 400 && (
+						<Button
+							size="sm"
+							transition="all 0.5s"
+							onClick={() => {
+								setRequestModalOpen(true);
+							}}
+						>
+							Create Trip
+						</Button>
+					)}
 
 					{sitemap
 						.filter((el) => el.href !== "/")
