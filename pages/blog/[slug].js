@@ -21,6 +21,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { NextSeo } from "next-seo";
 import { getPageTitle } from "../../lib/config";
 import { format, isValid } from "date-fns";
+import { loader } from "lib/loader";
 
 export async function getStaticPaths() {
 	const response = await Client().query(
@@ -125,6 +126,7 @@ const BlogPage = ({ blogPost }) => {
 								layout="fill"
 								objectFit="cover"
 								alt={title}
+								loader={loader}
 							/>
 						</AspectRatio>
 					</Box>
