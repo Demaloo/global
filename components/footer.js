@@ -29,7 +29,10 @@ const Footer = () => {
 					justifyContent={["normal", null, "space-between"]}
 				>
 					<Stack spacing="6">
-						<Logo />
+						<Stack direction="row" alignItems="center">
+							<Logo />
+							<Text as="span">Demtrips</Text>
+						</Stack>
 						<Text maxW="300px">
 							Weve counted billions of page views for thousands of
 							customers, all without ever compromising anyone’s privacy.

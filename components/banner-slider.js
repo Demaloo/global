@@ -31,14 +31,10 @@ const items = [
 
 const Carousel = () => {
 	const [opacities, setOpacities] = useState([]);
-	const [currIdx, setCurrIdx] = useState(0);
 	const [sliderRef, slider] = useKeenSlider({
 		slides: 3,
 		loop: true,
 		duration: 1500,
-		slideChanged(s) {
-			setCurrIdx(s.details().relativeSlide);
-		},
 		move(s) {
 			const new_opacities = s
 				.details()
@@ -128,35 +124,6 @@ const Carousel = () => {
 								slider.next();
 							}}
 						/>
-						<Flex
-							position="absolute"
-							left="0"
-							right="0"
-							width="100%"
-							bottom={[10, null, 24]}
-						>
-							{items.map(({ category }, idx) => (
-								<Button
-									display={[
-										currIdx === idx ? "inline" : "none",
-										null,
-										"inline",
-									]}
-									mr="10"
-									key={category}
-									fontWeight="semibold"
-									fontSize={["lg", null, "xl"]}
-									color={currIdx === idx ? "white" : "gray.400"}
-									transition="all 0.3s"
-									variant="unstyled"
-									onClick={() => {
-										slider.moveToSlideRelative(idx);
-									}}
-								>
-									{category}
-								</Button>
-							))}
-						</Flex>
 					</Flex>
 				</Container>
 			</Box>

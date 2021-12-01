@@ -5,7 +5,7 @@ import Destinations from "~components/main-page/destinations";
 import Experiences from "~components/main-page/experiences";
 import Script from "next/script";
 import { NextSeo } from "next-seo";
-import { getPageTitle, pagesConfig } from "lib/config";
+import { pagesConfig } from "lib/config";
 import WhyUs from "~components/main-page/why-us";
 import Trending from "~components/main-page/trending";
 import Testimonials from "~components/main-page/testimonials";
@@ -16,7 +16,7 @@ export default function Home() {
 	return (
 		<>
 			<NextSeo
-				title={getPageTitle(pagesConfig.home.title)}
+				title={pagesConfig.home.title}
 				description={pagesConfig.home.description}
 			/>
 

@@ -16,11 +16,11 @@ import Header from "~components/header";
 // import { format } from "date-fns";
 import NextImage from "next/image";
 import NextLink from "next/link";
-import { getPlaiceholder } from "plaiceholder";
 import Footer from "~components/footer";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 import { NextSeo } from "next-seo";
 import { getPageTitle } from "../../lib/config";
+import { format, isValid } from "date-fns";
 
 export async function getStaticPaths() {
 	const response = await Client().query(
@@ -60,17 +60,9 @@ export async function getStaticProps({ params }) {
       `,
 	});
 
-	const { base64, img } = await getPlaiceholder(blogPost.cover);
-
 	return {
 		props: {
-			blogPost: {
-				...blogPost,
-				cover: {
-					...img,
-					blurDataURL: base64,
-				},
-			},
+			blogPost,
 		},
 	};
 }
@@ -87,7 +79,7 @@ const BlogPage = ({ blogPost }) => {
 			<NextSeo title={getPageTitle(title)} description={short_description} />
 			<Header />
 			<Box as="main">
-				<Container maxW="container.lg" my="50px">
+				<Container maxW="container.lg" my={["80px", null, "100px"]}>
 					<Box>
 						<Breadcrumb
 							spacing="8px"
@@ -114,8 +106,11 @@ const BlogPage = ({ blogPost }) => {
 						</Heading>
 
 						<Text pb="10" color="gray.500" textAlign="center">
-							{/* {format(new Date(createdAt), "MMMM dd, yyyy")} */}
-							{createdAt}
+							{isValid(new Date(createdAt)) && (
+								<Text as="span" fontSize="sm">
+									{format(new Date(createdAt), "MMMM dd, yyyy")}
+								</Text>
+							)}
 						</Text>
 
 						<AspectRatio
@@ -126,11 +121,10 @@ const BlogPage = ({ blogPost }) => {
 							ratio={2 / 1}
 						>
 							<NextImage
-								{...cover}
+								src={cover}
 								layout="fill"
 								objectFit="cover"
 								alt={title}
-								placeholder="blur"
 							/>
 						</AspectRatio>
 					</Box>
@@ -141,8 +135,6 @@ const BlogPage = ({ blogPost }) => {
 			</Box>
 
 			<Footer />
-
-			{/* <Box><pre>{JSON.stringify(blogPost, null, 2)}</pre></Box> */}
 		</>
 	);
 };

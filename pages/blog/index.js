@@ -10,16 +10,16 @@ import {
 	Wrap,
 	WrapItem,
 } from "@chakra-ui/react";
-import { getPlaiceholder } from "plaiceholder";
 import { queryBlogPosts } from "lib/queries";
 import BlogPost from "~components/blog_post";
 import Header from "~components/header";
 import Footer from "~components/footer";
-// import { format } from "date-fns";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import { NextSeo } from "next-seo";
-import { getPageTitle, pagesConfig } from "../../lib/config";
+import { pagesConfig } from "../../lib/config";
+import { loader } from "lib/loader";
+import { format, isValid } from "date-fns";
 
 export async function getStaticProps() {
 	let blogPosts = await queryBlogPosts({
@@ -39,23 +39,6 @@ export async function getStaticProps() {
       }
       `,
 	});
-
-	blogPosts = await Promise.all(
-		blogPosts.map(async (item) => {
-			const { base64, img } = await getPlaiceholder(item.cover);
-
-			delete img["width"];
-			delete img["height"];
-
-			return {
-				...item,
-				cover: {
-					...img,
-					blurDataURL: base64,
-				},
-			};
-		})
-	);
 
 	return {
 		props: {
@@ -84,11 +67,12 @@ const LatestNews = ({
 						ratio={2 / 1}
 					>
 						<NextImage
-							{...cover}
+							src={cover}
 							layout="fill"
 							objectFit="cover"
 							alt={title}
-							placeholder="blur"
+							loader={loader}
+							sizes="(max-width: 768px) 100vw, 50vw"
 						/>
 					</AspectRatio>
 				</a>
@@ -107,8 +91,11 @@ const LatestNews = ({
 				</Text>
 
 				<Text as="span" fontSize="sm">
-					{/* {createdAt && format(new Date(createdAt), "MMMM dd, yyyy")} */}
-					{createdAt}
+					{isValid(new Date(createdAt)) && (
+						<Text as="span" fontSize="sm">
+							{format(new Date(createdAt), "MMMM dd, yyyy")}
+						</Text>
+					)}
 				</Text>
 
 				<Wrap mt="4" spacing="4">
@@ -127,14 +114,14 @@ const BlogPage = ({ blogPosts }) => {
 	return (
 		<>
 			<NextSeo
-				title={getPageTitle(pagesConfig.blog.title)}
+				title={pagesConfig.blog.title}
 				description={pagesConfig.blog.description}
 			/>
 			<Header />
 			<Container
 				as="section"
 				maxW="container.lg"
-				// my={["80px", null, "100px"]}
+				my={["80px", null, "100px"]}
 			>
 				<Grid
 					templateColumns={[

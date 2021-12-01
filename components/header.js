@@ -55,7 +55,7 @@ const Header = ({ isTransparent = false }) => {
 						</Link>
 					</NextLink>
 
-					{y > 400 && (
+					{isTransparent && y > 400 && (
 						<Button
 							size="sm"
 							transition="all 0.5s"

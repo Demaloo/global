@@ -7,6 +7,8 @@ import {
 	Wrap,
 	WrapItem,
 } from "@chakra-ui/react";
+import { format, isValid } from "date-fns";
+import { loader } from "lib/loader";
 import NextImage from "next/image";
 import NextLink from "next/link";
 // import { format } from "date-fns";
@@ -33,11 +35,12 @@ const BlogPost = ({
 						borderRadius="md"
 					>
 						<NextImage
-							{...cover}
+							src={cover}
 							layout="fill"
 							objectFit="cover"
 							alt={title}
-							placeholder="blur"
+							loader={loader}
+							sizes="(max-width: 768px) 100vw, 50vw"
 						/>
 					</Box>
 				</a>
@@ -56,8 +59,11 @@ const BlogPost = ({
 			</Text>
 
 			<Text as="span" fontSize="sm">
-				{/* {createdAt && format(new Date(createdAt), "MMMM dd, yyyy")} */}
-				{createdAt}
+				{isValid(new Date(createdAt)) && (
+					<Text as="span" fontSize="sm">
+						{format(new Date(createdAt), "MMMM dd, yyyy")}
+					</Text>
+				)}
 			</Text>
 
 			<Wrap mt="4" spacing="4">
