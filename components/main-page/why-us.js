@@ -4,24 +4,26 @@ import NextImage from "next/image";
 const features = [
 	{
 		image: "",
-		title: "Local expertise",
-		description: "From local gems to highlights, our agents have you covered",
+		title: "Personalized Trip ",
+		description: "Unique trips made only for you. ",
 	},
 	{
 		image: "",
-		title: "100% tailor-made",
-		description: "Customize a tour based around your needs and interests",
+		title: "Verified guides/hosts",
+		description:
+			"All our service providers are verified. Security is guaranteed. ",
 	},
 	{
 		image: "Cost-Efficient Pricing",
-		title: "Cost-Efficient Pricing",
-		description: "Our prices don't include any middleman fee",
+		title: "Best experts",
+		description:
+			"Best experts are local guides, connect directly with the best experts in Central Asia.",
 	},
 	{
 		image: "Our guarantees",
-		title: "Our guarantees",
+		title: "Price",
 		description:
-			"We're an ASTA member and provide a range of safety guarantees",
+			"We offer secure payment and affordable prices without any intermediary.",
 	},
 ];
 

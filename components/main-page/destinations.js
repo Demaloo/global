@@ -5,7 +5,6 @@ import {
 	Flex,
 	Heading,
 	IconButton,
-	Text,
 	useBreakpointValue,
 } from "@chakra-ui/react";
 import { useKeenSlider } from "keen-slider/react";
@@ -16,32 +15,22 @@ import { useState } from "react";
 const destinations = [
 	{
 		image: "/destinations/destination-image-1.jpeg",
-		description:
-			"This is the description for destination number 1 which is Kyrgyzstan",
 		title: "Kyrgyzstan",
 	},
 	{
 		image: "/destinations/destination-image-2.jpeg",
-		description:
-			"This is the description for destination number 2 which is Kazakhstan",
 		title: "Kazakhstan",
 	},
 	{
 		image: "/destinations/destination-image-3.jpeg",
-		description:
-			"This is the description for destination number 3 which is Uzbekistan",
 		title: "Uzbekistan",
 	},
 	{
 		image: "/destinations/destination-image-4.jpeg",
-		description:
-			"This is the description for destination number 4 which is Tajikistan",
 		title: "Tajikistan",
 	},
 	{
 		image: "/destinations/destination-image-5.jpeg",
-		description:
-			"This is the description for destination number 5 which is Turkmenistan",
 		title: "Turkmenistan",
 	},
 ];
@@ -92,7 +81,7 @@ function Destinations() {
 							className="keen-slider"
 							pl={["0px", null, "100px"]}
 						>
-							{destinations.map(({ image, description, title }) => (
+							{destinations.map(({ image, title }) => (
 								<AspectRatio
 									key={`${title}`}
 									className="keen-slider__slide"
@@ -127,7 +116,6 @@ function Destinations() {
 											<Heading size="lg" mb="2">
 												{title}
 											</Heading>
-											<Text fontSize="sm">{description}</Text>
 										</Flex>
 									</Box>
 								</AspectRatio>

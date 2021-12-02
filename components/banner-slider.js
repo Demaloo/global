@@ -96,7 +96,7 @@ const Carousel = () => {
 					>
 						<Flex flexDirection="column" maxW="700px" alignItems="start">
 							<Heading size="2xl" mb="6" lineHeight="short">
-								Faboulous Adventures Start with Demtrips
+								Create personalized tours around Central Asia.
 							</Heading>
 							<Text
 								lineHeight="taller"
@@ -104,9 +104,9 @@ const Carousel = () => {
 								mb="8"
 								display={["none", null, "block"]}
 							>
-								Kayak (styled as KAYAK) is an American online travel
-								agency and metasearch engine owned and operated by
-								Booking Holdings.
+								Eagle Hunting, Yurtah Show, Skiing, Mountain tracking or
+								anything you like. We will create a trip that matches
+								your interests.
 							</Text>
 							<Button
 								size="lg"
@@ -130,8 +130,6 @@ const Carousel = () => {
 		</Box>
 	);
 };
-
-// {items[currIdx].category}
 
 const NextSlideButton = ({ icon, onClick }) => {
 	return (

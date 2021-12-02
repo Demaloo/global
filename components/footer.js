@@ -6,12 +6,10 @@ import {
 	Link,
 	Heading,
 	Flex,
-	Icon,
 } from "@chakra-ui/react";
 import { sitemap } from "lib/config";
 import NextLink from "next/link";
 import Logo from "./logo";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
 	return (
@@ -80,7 +78,7 @@ const Footer = () => {
 				</Stack>
 
 				{/* Social */}
-				<Stack direction="row" spacing="4" mb="6" alignItems="center">
+				{/* <Stack direction="row" spacing="4" mb="6" alignItems="center">
 					<Link>
 						<Icon as={FaFacebook} boxSize={6} color="facebook.500" />
 					</Link>
@@ -90,7 +88,7 @@ const Footer = () => {
 					<Link>
 						<Icon as={FaTwitter} boxSize={6} color="telegram.400" />
 					</Link>
-				</Stack>
+				</Stack> */}
 
 				<Flex>
 					<Text as="span" fontSize="sm" color="gray.500">

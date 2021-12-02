@@ -28,13 +28,11 @@ const About = () => {
 								maxW={["none", null, "500px"]}
 							>
 								<Heading mb={[8, null, 10]} size="xl">
-									Explore all corners of the world with us
+									Become a nomad
 								</Heading>
 								<Text mb={[8, null, 10]}>
-									We are best Food Maker and Best Delivery restaurant
-									to our customers and find your favourite restaurants
-									available in your zone. We have more than 1000 of
-									menus online. Its quick, easy and totally secure
+									Immerse yourself to a lifestyle of nomads, living in
+									yurts, drinking horse milk, and cooking nan.
 								</Text>
 								<Button size="lg">Create Trip</Button>
 							</Flex>
@@ -83,13 +81,14 @@ const About = () => {
 								maxW="500px"
 							>
 								<Heading mb={[8, null, 10]} size="xl">
-									Explore all corners of the world with us
+									Untouched Nature
 								</Heading>
 								<Text mb={[8, null, 10]}>
-									We are best Food Maker and Best Delivery restaurant
-									to our customers and find your favourite restaurants
-									available in your zone. We have more than 1000 of
-									menus online. Its quick, easy and totally secure
+									Untouched beauty of the Tien Shan mountains,
+									unconquered peaks and untouched caves. Alpine
+									pastures and horse breeders living in yurts are
+									former nomads, the mysterious and alluring Lake
+									Issyk-Kul. Contact with the nature is healing.
 								</Text>
 								<Button
 									colorScheme="red"
@@ -101,6 +100,43 @@ const About = () => {
 									Create Trip
 								</Button>
 							</Flex>
+						</Flex>
+						<Flex alignItems="center">
+							<Flex
+								flexDirection="column"
+								alignItems="start"
+								justifyContent={["flex-start", null, "flex-end"]}
+								maxW={["none", null, "500px"]}
+							>
+								<Heading mb={[8, null, 10]} size="xl">
+									Unique experiences
+								</Heading>
+								<Text mb={[8, null, 10]}>
+									Feel the atmosphere and experience unique experiences
+									only in Central Asia.
+								</Text>
+								<Button size="lg">Create Trip</Button>
+							</Flex>
+						</Flex>
+						<Flex
+							alignItems="center"
+							justifyContent="flex-end"
+							display={["none", null, "flex"]}
+						>
+							<AspectRatio
+								ratio={3 / 2}
+								position="relative"
+								width="100%"
+								borderRadius="md"
+								overflow="hidden"
+							>
+								<NextImage
+									src="/main-about/main-about-barksoon-waterfall.jpeg"
+									layout="fill"
+									alt="waterfall"
+									objectFit="cover"
+								/>
+							</AspectRatio>
 						</Flex>
 					</Grid>
 				</Container>
