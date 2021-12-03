@@ -11,10 +11,6 @@ import { format, isValid } from "date-fns";
 import { loader } from "lib/loader";
 import NextImage from "next/image";
 import NextLink from "next/link";
-// import { format } from "date-fns";
-
-// TODO
-// add changedAt date
 
 const BlogPost = ({
 	cover,
@@ -23,6 +19,7 @@ const BlogPost = ({
 	categories,
 	createdAt,
 	slug,
+	categoriesAreVisible = true,
 }) => {
 	return (
 		<Box maxW="500px" width="100%" mx="auto">
@@ -66,13 +63,15 @@ const BlogPost = ({
 				)}
 			</Text>
 
-			<Wrap mt="4" spacing="4">
-				{categories.map((category, idx) => (
-					<WrapItem key={idx}>
-						<Tag>{category}</Tag>
-					</WrapItem>
-				))}
-			</Wrap>
+			{categoriesAreVisible ? (
+				<Wrap mt="4" spacing="4">
+					{categories.map((category, idx) => (
+						<WrapItem key={idx}>
+							<Tag>{category}</Tag>
+						</WrapItem>
+					))}
+				</Wrap>
+			) : null}
 		</Box>
 	);
 };

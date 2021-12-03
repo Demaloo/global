@@ -47,7 +47,7 @@ export async function getStaticProps() {
 	};
 }
 
-const LatestNews = ({
+export const News = ({
 	cover,
 	title,
 	short_description,
@@ -134,7 +134,7 @@ const BlogPage = ({ blogPosts }) => {
 					rowGap="20"
 				>
 					<Flex gridArea="1 / 1 / 2 / 3">
-						<LatestNews {...blogPosts[0]} />
+						<News {...blogPosts[0]} />
 					</Flex>
 					{blogPosts.slice(1).map(({ id, ...rest }) => (
 						<BlogPost key={id} {...rest} />

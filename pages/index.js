@@ -1,7 +1,7 @@
 import Carousel from "~components/banner-slider";
 import Footer from "~components/footer";
 import Header from "~components/header";
-import Destinations from "~components/main-page/destinations";
+// import Destinations from "~components/main-page/destinations";
 import Experiences from "~components/main-page/experiences";
 import Script from "next/script";
 import { NextSeo } from "next-seo";
@@ -11,9 +11,14 @@ import Trending from "~components/main-page/trending";
 import Testimonials from "~components/main-page/testimonials";
 import About from "~components/main-page/about";
 import { Box } from "@chakra-ui/react";
-import { queryMainPage, queryTestimonials } from "lib/queries";
+import { queryBlogPosts, queryMainPage, queryTestimonials } from "lib/queries";
+import LatestNews from "~components/main-page/latest_news";
 
-export default function Home({ testimonials, mainPage: { features } }) {
+export default function Home({
+	testimonials,
+	mainPage: { features },
+	blogPosts,
+}) {
 	return (
 		<>
 			<NextSeo
@@ -47,9 +52,11 @@ export default function Home({ testimonials, mainPage: { features } }) {
 				<Carousel />
 				<About features={features} />
 				<WhyUs />
-				<Destinations />
+				{/* <Destinations /> */}
 				<Experiences />
+				<LatestNews posts={blogPosts} />
 				<Trending />
+
 				<Testimonials testimonials={testimonials} />
 				<Footer />
 			</Box>
@@ -60,11 +67,29 @@ export default function Home({ testimonials, mainPage: { features } }) {
 export async function getStaticProps() {
 	const testimonials = await queryTestimonials();
 	const mainPage = await queryMainPage();
+	let blogPosts = await queryBlogPosts({
+		graphQuery: `{
+         blog_post {
+            title
+            short_description
+            cover
+            categories {
+               category {
+                  ...on category {
+                     tag
+                  }
+               }
+            }
+         }
+      }
+      `,
+	});
 
 	return {
 		props: {
 			testimonials,
 			mainPage,
+			blogPosts,
 		},
 	};
 }
