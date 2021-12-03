@@ -82,7 +82,11 @@ const Carousel = () => {
 				top="0"
 				left="0"
 				boxSize="100%"
-				bg="rgba(0, 0, 0, 0.5)"
+				bg={[
+					"linear-gradient(320deg, rgba(0,11,38,0) 5rem, rgba(0,11,38,0.4), rgba(0,1,38,0.5))",
+					null,
+					"linear-gradient(330deg, rgba(0,11,38,0) 24rem, rgba(0,11,38,0.4), rgba(0,1,38,0.5))",
+				]}
 				width="100%"
 			>
 				<Container height="100%" maxW="container.xl">
