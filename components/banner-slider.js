@@ -108,9 +108,10 @@ const Carousel = () => {
 								mb="8"
 								display={["none", null, "block"]}
 							>
-								Eagle Hunting, Yurtah Show, Skiing, Mountain tracking or
-								anything you like. We will create a trip that matches
-								your interests.
+								Eagle hunting, yurtah show, skiing, mountain tracking or
+								anything you like.
+								<br />
+								We will create a trip that matches your interests.
 							</Text>
 							<Button
 								size="lg"
