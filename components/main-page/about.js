@@ -59,6 +59,7 @@ const About = ({ features }) => {
 											alt={title}
 											objectFit="cover"
 											loader={loader}
+											sizes="(max-width: 768px) 100vw, 50vw"
 										/>
 									</AspectRatio>
 								</Flex>
