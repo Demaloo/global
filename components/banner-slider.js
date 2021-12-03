@@ -95,7 +95,7 @@ const Carousel = () => {
 						position="relative"
 					>
 						<Flex flexDirection="column" maxW="700px" alignItems="start">
-							<Heading size="2xl" mb="6" lineHeight="short">
+							<Heading as="h1" size="2xl" mb="6" lineHeight="short">
 								Create personalized tours around Central Asia.
 							</Heading>
 							<Text

@@ -1,38 +1,14 @@
 import {
-	Avatar,
 	Box,
 	Container,
 	Flex,
 	Grid,
 	Heading,
 	Text,
+	Image,
 } from "@chakra-ui/react";
 
-const testimonials = [
-	{
-		name: "Alexander Yarmin",
-		from: "Sukubami, Indonesia",
-		testimonial:
-			"“Hade mang aslina euy mantap lah lumayan apalagi buat liburan nambah pengalamanjuga buat diri sendiri ”",
-		photo: "/oliver.jpeg",
-	},
-	{
-		name: "Alexander Yarmin",
-		from: "Sukubami, Indonesia",
-		testimonial:
-			"“Hade mang aslina euy mantap lah lumayan apalagi buat liburan nambah pengalamanjuga buat diri sendiri ”",
-		photo: "/oliver.jpeg",
-	},
-	{
-		name: "Alexander Yarmin",
-		from: "Sukubami, Indonesia",
-		testimonial:
-			"“Hade mang aslina euy mantap lah lumayan apalagi buat liburan nambah pengalamanjuga buat diri sendiri ”",
-		photo: "/oliver.jpeg",
-	},
-];
-
-const Testimonials = () => {
+const Testimonials = ({ testimonials }) => {
 	return (
 		<Box as="section" py={["100px", null, "150px"]} bg="gray.100">
 			<Container maxW="container.xl">
@@ -51,7 +27,7 @@ const Testimonials = () => {
 					columnGap={[4, null, 4]}
 					rowGap="10"
 				>
-					{testimonials.map(({ name, from, testimonial, photo }, idx) => (
+					{testimonials.map(({ fullName, from, text, photo }, idx) => (
 						<Flex
 							key={idx}
 							flexDirection="column"
@@ -60,10 +36,19 @@ const Testimonials = () => {
 							borderRadius="md"
 						>
 							<Flex mb="4">
-								<Avatar src={photo} mr="4" />
+								<Image
+									src={photo}
+									alt={fullName}
+									boxSize="80px"
+									borderRadius="full"
+									overflow="hidden"
+									mr="4"
+									objectFit="cover"
+								/>
+
 								<Flex flexDir="column" justifyContent="center">
 									<Text as="span" fontWeight="semibold">
-										{name}
+										{fullName}
 									</Text>
 									<Text as="span" fontSize="sm" color="#999999">
 										{from}
@@ -76,7 +61,7 @@ const Testimonials = () => {
 								textStyle="italic"
 								lineHeight="tall"
 							>
-								{testimonial}
+								{text}
 							</Text>
 						</Flex>
 					))}

@@ -11,8 +11,9 @@ import Trending from "~components/main-page/trending";
 import Testimonials from "~components/main-page/testimonials";
 import About from "~components/main-page/about";
 import { Box } from "@chakra-ui/react";
+import { queryMainPage, queryTestimonials } from "lib/queries";
 
-export default function Home() {
+export default function Home({ testimonials, mainPage: { features } }) {
 	return (
 		<>
 			<NextSeo
@@ -44,14 +45,26 @@ export default function Home() {
 			<Header isTransparent={true} />
 			<Box as="main">
 				<Carousel />
-				<About />
+				<About features={features} />
 				<WhyUs />
 				<Destinations />
 				<Experiences />
 				<Trending />
-				<Testimonials />
+				<Testimonials testimonials={testimonials} />
 				<Footer />
 			</Box>
 		</>
 	);
+}
+
+export async function getStaticProps() {
+	const testimonials = await queryTestimonials();
+	const mainPage = await queryMainPage();
+
+	return {
+		props: {
+			testimonials,
+			mainPage,
+		},
+	};
 }
