@@ -16,16 +16,16 @@ const About = ({ features }) => {
 		<>
 			<Box as="section" pt={["100px", null, "150px"]}>
 				<Container maxW="container.xl">
-					<Stack spacing="20">
+					<Stack spacing={[20]}>
 						{features.map(({ title, image, description }, idx) => (
 							<Grid
 								key={"features" + idx}
 								templateColumns={["1fr", null, "1fr 1fr"]}
-								gap="20"
+								gap={[6, null, 20]}
 							>
 								<Flex
 									alignItems="center"
-									order={idx % 2 === 0 ? 1 : -1}
+									order={[null, null, idx % 2 === 0 ? 1 : -1]}
 								>
 									<Flex
 										flexDirection="column"
@@ -42,7 +42,7 @@ const About = ({ features }) => {
 								<Flex
 									alignItems="center"
 									justifyContent="flex-end"
-									display={["none", null, "flex"]}
+									// display={["none", null, "flex"]}
 									width="100%"
 								>
 									<AspectRatio

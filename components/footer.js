@@ -31,10 +31,6 @@ const Footer = () => {
 							<Logo />
 							<Text as="span">Demtrips</Text>
 						</Stack>
-						<Text maxW="300px">
-							Weve counted billions of page views for thousands of
-							customers, all without ever compromising anyone’s privacy.
-						</Text>
 					</Stack>
 
 					<Stack spacing="2" textAlign={["start"]}>
